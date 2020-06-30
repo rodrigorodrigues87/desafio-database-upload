@@ -20,7 +20,7 @@ class ImportTransactionsService {
 
     const readCSVStream = fs.createReadStream(filePath);
 
-    const parseStream = csvParse({ from_line: 2 });
+    const parseStream = csvParse({ from_line: 2, ltrim: true, rtrim: true });
 
     const parseCSV = readCSVStream.pipe(parseStream);
 
